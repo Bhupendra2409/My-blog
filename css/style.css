@@ -1,0 +1,60 @@
+
+#carousel{
+    height: 100vh;
+    width: 100vw;
+    /* border: 2px solid red; */
+    /* stroke: black; */
+    background-color: rgb(224, 195, 161);
+}
+.borderlagado{
+    border: 2px solid red;
+}
+#intro{
+    display: grid;
+    grid-template-areas:
+    'meriphoto name name artwork artwork artwork'
+    'introtext introtext introtext artwork artwork artwork'
+    'introtext introtext introtext artwork artwork artwork'
+    'introtext introtext introtext artwork artwork artwork'
+    ; 
+}
+#name{
+    grid-area: name;
+}
+#introtext{
+    grid-area: introtext;
+}
+#artwork{
+    grid-area: artwork;
+}
+#meriphoto{
+    grid-area: meriphoto;
+}
+.logobox{
+    height: 5vw;
+    width: 5vw;
+    transition: 0.25s;
+}
+.logobox:hover{
+    height: 6vw;
+    width: 6vw;
+}
+.navbar-toggler:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+@media  screen and (max-width:992px) {
+    .ml-auto{
+        /* justify-content: center!important; */
+        align-items: center;
+        /* margin: auto!important; */
+        
+    }
+    
+}
+@media  screen and (min-width:992px) {
+    .ml-auto{
+        /* margin: auto!important; */
+        margin-left: auto!important;
+    }
+    
+}

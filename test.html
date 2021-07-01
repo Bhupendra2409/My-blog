@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/test.css">
+</head>
+
+<body>
+    <div id="maintext">
+
+    </div>
+    <script>
+        var initialstr = ['Hello', 'I am Bhupendra', 'Glad to See you'];
+        var allstring = [];
+        for (i = 0; i < initialstr.length; i++) {
+            var substrings = [];
+            substrings.push('');
+            var j = 1;
+            for (k = 0; k < initialstr[i].length; k++) 
+                substrings.push(initialstr[i].substr(0, j++));
+                
+            allstring.push(substrings);
+        }
+
+        var tx = 0;
+        var incdc = 0;
+        var konsistring = 0;
+        function testanimation(element) {
+            element.innerHTML = allstring[konsistring][tx];
+            if (incdc == 0) {
+                tx++;
+                if (tx == initialstr[konsistring].length + 1) {
+                    tx--;
+                    incdc = 1;
+                }
+            }
+            else {
+                tx--;
+                if (tx == -1) {
+                    tx++;
+                    incdc = 0;
+                    konsistring++;
+                    if (konsistring == allstring.length) konsistring = 0;
+                }
+            }
+        }
+
+        var ele = document.getElementById('maintext');
+        // test(ele);
+        setInterval(testanimation, 150, ele);
+    </script>
+</body>
+
+</html>
