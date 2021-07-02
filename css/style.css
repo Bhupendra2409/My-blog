@@ -1,46 +1,91 @@
-
-#carousel{
-    height: 100vh;
-    width: 100vw;
-    /* border: 2px solid red; */
-    /* stroke: black; */
-    background-color: rgb(224, 195, 161);
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
 }
+
 .borderlagado{
     border: 2px solid red;
 }
-#intro{
+
+.bgimage{
+    object-fit: cover;
+    height: 100vh;
+    width : 100%;
+    position: absolute;
+    top : 0;
+    left: 0;
+}
+
+.sidepanel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.socialicons{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    justify-content: space-evenly;
+}
+.navelements{
     display: grid;
-    grid-template-areas:
-    'meriphoto name name artwork artwork artwork'
-    'introtext introtext introtext artwork artwork artwork'
-    'introtext introtext introtext artwork artwork artwork'
-    'introtext introtext introtext artwork artwork artwork'
-    ; 
+   
+    width: 100%;
+    grid-template-columns: 5% 1fr 60%;
 }
-#name{
-    grid-area: name;
+.navele{
+    font-family: Poppins;
+    font-style: normal;
+    grid-column: 2/3;
+    padding: 4rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    color: white;
+    z-index: 1;
 }
-#introtext{
-    grid-area: introtext;
+.navitems{
+    position: relative;
+    transition: 0.1s ease-in;
+    /* transition-property: border-bottom; */
 }
-#artwork{
-    grid-area: artwork;
-}
-#meriphoto{
-    grid-area: meriphoto;
-}
-.logobox{
-    height: 5vw;
-    width: 5vw;
-    transition: 0.25s;
-}
-.logobox:hover{
-    height: 6vw;
-    width: 6vw;
-}
-.navbar-toggler:not(:disabled):not(.disabled) {
+.navitems:hover{
+    transform: translateX(4px);
     cursor: pointer;
+    
+    /* border-bottom: 2px solid white; */
+}
+.navitems::before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+}
+.navitems:hover::before{
+    animation: hoverani 0.5s linear forwards;
+}
+.icons{
+    transition: 0.1s linear;
+}
+.icons:hover{
+    transform: scale(1.1,1.1);
+}
+@keyframes hoverani {
+    0%{
+        width: 0;
+        height: 100%;
+    }
+    100%{
+        height: 100%;
+        width: 100%;
+        border-bottom: 2px solid white;
+    }
 }
 @media  screen and (max-width:992px) {
     .ml-auto{
