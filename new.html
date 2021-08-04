@@ -5,12 +5,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
     </style>
 
     <title>TACHYON</title>
@@ -18,32 +18,100 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <div class="navelements">
+        <nav class="navbar borderlagado">
+            <div id="navelements">
                 <div class="navele">
                     <div class="navitems">Home</div>
                     <div class="navitems">About</div>
                     <div class="navitems">Skills</div>
                     <div class="navitems">Contact</div>
                 </div>
-               
+
             </div>
             <div class="imgcontainer">
                 <img class="bgimage" src="img/bg3.jpg" alt="">
             </div>
-            
+
         </nav>
     </header>
     <div class="sidepanel">
         <div class="socialicons">
-            <img class="icons"  src="img/facebook.png" alt="">
+            <img class="icons" src="img/facebook.png" alt="">
             <img class="icons" src="img/linkedin.png" alt="">
             <img class="icons" src="img/instagram.png" alt="">
             <img class="icons" src="img/twitter.png" alt="">
         </div>
     </div>
+    <div class="welcomemsgcontainer ">
+        <div></div>
+        <div class="welcomemsg">
+            <p style="font-size: 6vw ;margin: 1vh 0 1vh 0;text-align: center;">Welcome</p>
+            <p id="maintext" style="font-size: 2vw;text-align: center;"></p>
+        </div>
+        <div></div>
+    </div>
 
-    <script src="script/script.js"> </script>
+    <div class="scrolliconcontainer">
+        <img src="img/scroll.png" id="scrollicon" alt="">
+    </div>
+    <div class="aboutcontainer">
+        <div class="aboutpadding">
+            <div class="aboutme borderlagado">About me</div>
+            <img class="borderlagado" src="img/Subtractmyimage.png" alt="hello" id="myimage">
+            <div class="aboutmetext">Myself Bhupendra malakar, a CSE student at IIT Roorkee. I am an energetic person
+                with a good sense of humour. I can easily go along with people and coperate with the them as a team. I
+                am always self motivated and hardworking. I accept my mistakes and ready to develop and learn. With my
+                creative thinking, i find new ways of solving problems. </div>
+            <div class="resumebtn borderlagado">Resume</div>
+        </div>
+    </div>
+    <!-- <div class="horline"></div> -->
+    <div class="skillcontainer">
+        <div class="skillpadding">
+            <div id="skillheading">Skills</div>
+            <div id="skillgrid" class="borderlagado">
+                <div class="borderlagado skilltag" style="background-image: url('../img/skilltagbg.png');">
+                    <div class="skillcontent borderlagado ">
+                        <div class="skilltitle">C++</div>
+                        <div class="skilltext borderlagado">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        </div>
+                    </div>
+
+                </div>
+                <div class="borderlagado skilltag" style="background-image: url('../img/javabg.png');">
+                    <div class="skillcontent borderlagado">
+                        <div class="skilltitle">Java</div>
+                        <div class="skilltext borderlagado">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        </div>
+                    </div>
+
+                </div>
+                <div class="borderlagado skilltag" style="background-image: url('../img/htmlbg.png');">
+                    <div class="skillcontent borderlagado ">
+                        <div class="skilltitle">HTML/CSS</div>
+                        <div class="skilltext borderlagado">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        </div>
+                    </div>
+
+                </div>
+                <div class="borderlagado skilltag" style="background-image: url('../img/javabg.png');">
+                    <div class="skillcontent borderlagado ">
+                        <div class="skilltitle" style="font-size: 2.1rem;line-height: 110%;">Problem <br>Solving</div>
+                        <div class="skilltext borderlagado">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="projectcontainer">
+        <div class="projectpadding">
+            <div id="projectheading">Projects</div>
+            
+        </div>
+    </div>
+    <script src="script/script.js"></script>
 
 </body>
 

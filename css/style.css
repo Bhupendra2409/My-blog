@@ -5,14 +5,20 @@
 }
 
 .borderlagado{
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    z-index: 3;
 }
-
+.horline{
+    width: 76vw;
+    margin: 0vw 12vw;
+    border: 1px solid #dadada;
+}
 .bgimage{
     object-fit: cover;
     height: 100vh;
     width : 100%;
     position: absolute;
+    z-index: -1;
     top : 0;
     left: 0;
 }
@@ -33,27 +39,38 @@
     height: 60%;
     justify-content: space-evenly;
 }
-.navelements{
+
+#navelements{
+    z-index: 10;
+    position: fixed;
+    /* background-color: black; */
+    top: 0;
+    left: 0;
     display: grid;
-   
+    padding: 3vw 0 2vw 0;
     width: 100%;
     grid-template-columns: 5% 1fr 60%;
+    color: white;
+    transition: 0.1s ease-in;
+}
+.scrolling-active{
+    background-color: white;
+    box-shadow: 0 3px 1rem rgba(0, 0 , 0, .1);
+    color: #313131 !important;
 }
 .navele{
     font-family: Poppins;
-    font-style: normal;
+    font-weight: 600;
     grid-column: 2/3;
-    padding: 4rem 0;
     display: flex;
     justify-content: space-evenly;
-    font-size: 1rem;
-    color: white;
+    font-size: 1vw;
     z-index: 1;
+    transition: 0.1s ease-in;
 }
 .navitems{
     position: relative;
     transition: 0.1s ease-in;
-    /* transition-property: border-bottom; */
 }
 .navitems:hover{
     transform: translateX(4px);
@@ -62,44 +79,206 @@
     /* border-bottom: 2px solid white; */
 }
 .navitems::before{
-    position: absolute;
+    position:  absolute;
     content: "";
     width: 0;
-    height: 0;
+    height: 100%;
+    color: currentColor;
 }
 .navitems:hover::before{
+    height: 100%;
     animation: hoverani 0.5s linear forwards;
 }
+
+@keyframes hoverani {
+    0%{
+        width: 0;
+    }
+    100%{ 
+        width: 100%;
+        border-bottom: 2px solid currentColor;
+    }
+}
 .icons{
+    height: 3vw;
+    object-fit: contain;
     transition: 0.1s linear;
 }
 .icons:hover{
     transform: scale(1.1,1.1);
 }
-@keyframes hoverani {
-    0%{
-        width: 0;
-        height: 100%;
-    }
-    100%{
-        height: 100%;
-        width: 100%;
-        border-bottom: 2px solid white;
-    }
+.welcomemsgcontainer{
+    display: grid;
+    /* padding: 2rem 0; */
+    grid-template-columns: 47% 1fr 19%;
+    height: 90vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
-@media  screen and (max-width:992px) {
-    .ml-auto{
-        /* justify-content: center!important; */
-        align-items: center;
-        /* margin: auto!important; */
-        
-    }
-    
+.welcomemsg{
+    font-family: Poppins;
+    font-weight: 700;
+    color: #222222;
 }
-@media  screen and (min-width:992px) {
-    .ml-auto{
-        /* margin: auto!important; */
-        margin-left: auto!important;
-    }
+#maintext{
+    font-family: Poppins;
+    font-weight: 400;
+}
+
+.scrolliconcontainer{
+    display: grid;
+    grid-template-columns: 47% 1fr 19%;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
+#scrollicon{
+    grid-column: 2/3;
+    justify-self: center;
+    object-fit: contain;
+    height: 1vw;
+    transition: 0.5s ease-out;
+}
+.aboutcontainer{
+    display: grid;
+    padding: 4rem 0;
+    grid-template-columns: 22% 1fr 22%;
+    /* border-bottom-color: #803A1A; */
+    /* border-bottom: 1px solid #803A1A; */
+    /* border-bottom-width: 1px 80%; */
+}
+.aboutpadding{
+    display: grid;
+    height: max-content;
+    grid-column: 2/3;
+    grid-template-columns: 60% 40%;
+}
+#myimage{
+    grid-row: 1/4;
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: center;
+    width: 12vw;
+    object-fit: contain;
+}
+.aboutme{
+    font-family: Poppins;
+    font-weight: 700;
+    color: #313131;
+    align-self: center;
+    font-size: 4rem;
+    padding: 5% 2%;
+}
+.aboutmetext{
+    font-family: Poppins;
+    font-weight: 400;
+    padding: 0 2% 5% 2%;
+    font-size: 0.9vw;
+}
+.resumebtn{
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 0.9vw;
+    width: 6.5vw;
+    text-align: center;
+    color: #a95129;
+    background-color: #ffffff;
+    border-radius: 1rem 1rem 1rem / 1rem 1rem;
+    border:2px solid #a95129 ;
+    align-self: center;
+    justify-self: end;
+    padding: 1% 0%;
+    margin: 0 5%;
+    transition:0.1s ease-in;
+}
+.resumebtn:hover{
+    background-color: #a95129;
+    color: white;
+    border:2px solid #a95129 ;
+    cursor: pointer;
+}
+.skillcontainer{
+    display: grid;
+    padding: 4rem 0;
+    background-color: #fbfbfb;
+    grid-template-columns: 22% 1fr 22%;
+}
+.skillpadding{
+    display: grid;
+    /* height: max-content; */
+    grid-column: 2/3;
+    /* grid-template-columns: 60% 40%; */
+}
+#skillheading{
+    /* padding: 2rem 0; */
+    color: #313131;
+    text-align: center;
+    margin: 4rem 0 3rem 0rem;
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 5rem;
+}
+#skillgrid{
+    display: grid;
+    justify-content: center;
+    grid-row-gap: 2rem;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(200px,350px));
+}
+.skilltag{
+    place-self: center;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+}
+
+.skillcontent{
+    width: 100%;
+    min-height: 410px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skilltitle{
+    color: #313131;
+    text-align: center;
+    font-family: Poppins;
+    padding-top: 37%;
+    padding-bottom: 7%;
+    font-weight: 700;
+    font-size: 3rem;
+}
+.skilltext{
+    text-align: center;
+    padding: 0 10%;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: rgba(97 ,97, 97,100%);
+}
+.projectcontainer{
+    display: grid;
+    padding: 4rem 0;
+    background-color: rgb(255, 255, 255);
+    grid-template-columns: 22% 1fr 22%;
+}
+.projectpadding{
+    display: grid;
     
+    grid-column: 2/3;
+  
+}
+#projectheading{
+    /* padding: 2rem 0; */
+    color: #313131;
+    text-align: center;
+    margin: 4rem 0 3rem 0rem;
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 5rem;
 }
